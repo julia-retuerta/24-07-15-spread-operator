@@ -29,8 +29,36 @@ console.log(wordUpper); // OSCAR
 const numbersA = [1, 2, 3];
 const numbersB = numbersA;
 // const numbersB = [...numbersA]; // SPREAD OPERATOR (OPERADOR DE EXPANSIÓN)
+// se copia el contenido, no la referencia
+// se utiliza cada vez que se quiere trabajar con un array pero sin destruir el array original
+
+const joinArrays = [...numbersA, ...numbersB];
+console.log(joinArrays);
 
 numbersA.push(4);
 
 console.log('NUMBERS A', numbersA); // NUMBERS A = [1, 2, 3, 4]
 console.log('NUMBERS B', numbersB); // NUMBERS B = [1, 2, 3, 4]
+console.log(...numbersA); // 1 2 3
+
+// El spread operator también se puede emplear con objetos
+
+const objA = {
+  a: 1,
+  b: 2
+};
+
+const objB = { ...objA };
+
+objB.c = 3;
+
+console.log(objA);
+console.log(objB);
+
+// Se puede utilizar también para usar los métodos de los arrays
+
+const textsElements = [...document.querySelectorAll('.text')];
+
+const filteredTexts = textsElements.filter(text => text.textContent.length > 5);
+
+console.log(filteredTexts);
