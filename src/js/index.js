@@ -28,6 +28,7 @@ console.log(wordUpper); // OSCAR
 
 const numbersA = [1, 2, 3];
 const numbersB = numbersA;
+// const numbersB = [...numbersA]; // SPREAD OPERATOR (OPERADOR DE EXPANSIÓN)
 
 numbersA.push(4);
 
